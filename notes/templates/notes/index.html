@@ -2,21 +2,79 @@
 {% load static %}
 
 {% block content %}
-<img src="{% static 'notes/img/logo-getit.png' %}" />
-<p>Como o Post-it, mas com outro verbo</p>
 
-<form method="post">
-    {% csrf_token %}
-    <label for="titulo">Título</label>
-    <input id="titulo" type="text" name="titulo" />
-    <label for="detalhes">Detalhes</label>
-    <textarea id="detalhes" name="detalhes"></textarea>
-    <input type="submit" />
-</form>
-<ul>
+<div class="appbar">
+        <img src="img/logo-getit.png" href="index.html" class="logo"/>
+    <p class="subtitle">Como o Post-it, mas com outro verbo</p>
+</div>
+
+<div class=linkcontainer>
+	<p class="tagbtn">
+		<a class="taglink" href="{% url 'tagsList'%}">View Tags</a>
+	</p>
+</div>
+	
+<main class="container">
+    <form class="form-card" method="post">
+        {% csrf_token %}
+        <input type="hidden" value='None' name='id-hidden'> 
+        <input
+            class="form-card-title"
+            type="text"
+            name="titulo"
+            placeholder="Título"
+        />
+        <input
+            class="form-card-title"
+            type="text"
+            name="tag"
+            placeholder="Tag Title"
+        />
+        <textarea
+            class="form-card-content"
+            name="detalhes"
+            placeholder="Digite o conteúdo..."
+        ></textarea>
+        <button class="btn" name="send-button" type="submit">Criar</button>
+    </form>
+
+
+<div class="card-container">
     {% for note in notes %}
-    <li>{{ note.title }}</li>
-    <li>{{ note.contet }}</li>
+    <div class="card">
+
+        <div class="buttons-container">
+        <a class="editbutton">
+            <span class="editbutton-hover">		
+                <span class="editbutton-text" onclick="editNote({{note.id}})">Edit</span>
+            </span>
+        </a>
+    
+        <a class="editbutton">
+            <span class="editbutton-hover">		
+                <span class="editbutton-text" onclick="deleteForm({{note.id}})">Delete</span>
+            </span>
+        </a>
+
+        <a class="editbutton">
+            <span class="editbutton-hover">		
+                <span{{note.tag}}</span>
+            </span>
+        </a>
+        </div>
+    
+        <form name="deleteForm-{{note.id}}" method="post" class="delform">
+            {% csrf_token %}
+            <input type="hidden" name="deleteNote" value="{{note.id}}">
+        </form>
+    
+        <h3 class="card-title" name="title-{{note.id}}">{{note.title}}</h3>
+    
+        <div class="card-content">
+            <p name="content-{{note.id}}">{{note.content}}</p>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
+</main>
 {% endblock %}
