@@ -1,0 +1,290 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+   
+ .appbar {
+   background-color: #f7d736;	
+   display: flex;
+   flex-direction: row;
+   align-content: center;
+   box-shadow: 0 1px 24px rgba(0, 0, 0, 0.75);
+   margin-bottom: 2rem;
+ }
+ 
+ /* ***** CABECALHO ***** */
+ .logo {
+   width: 6%;
+   margin: 0.5rem;
+ }
+ 
+ .subtitle { 
+ 
+   align-self: center;
+   margin-left: 0.5rem;
+ }
+ 
+form {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	width: 50%;
+	margin:auto;
+	box-shadow: 0 7px 12px rgba(0, 0, 0, 0.4);
+	border-radius: 0.55rem;
+}
+  
+ .form-card-title {
+   font-family: "Roboto", sans-serif;
+   font-size: 1.3rem;
+   font-weight: bold;
+   padding: 0.2rem;
+   border-style: none;
+ }
+
+ .delform {
+	display: none;
+}
+
+ .form-card-content {
+	font-size: 1rem;
+	font-family: "Roboto", sans-serif;
+	border: none;
+	margin: 0.75rem;
+	resize: none;
+	margin-bottom: 1rem;
+
+}
+ /* ***** CARDS ***** */
+ .card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   max-width: 98%;
+   margin-top: 2rem;
+ }
+   
+ .card{
+   font-family: "Permanent Marker", cursive;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 25%;
+   height: auto;
+   min-width: 8rem;
+   min-height: 8rem;
+   max-width: 15rem;
+   padding: 1rem;
+   margin: 1.5rem;
+   border-radius: 0.5rem;
+   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+ }
+ 
+ .card-title{
+   font-family: "Permanent Marker", cursive;
+   font-size: 18px;
+   color:#2c2c2c;
+   font-weight: bold;
+   margin-bottom: 1rem;
+ }
+ 
+ .card-content{
+   font-family: "Permanent Marker", cursive;
+   font-size: 1.5rem;
+   align-self: center;
+   color:#4c4c4c;
+ }
+ 
+ .buttons-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+
+}
+
+ /* ***** ADD-BUTTON ***** */
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  height: 2.5rem;
+  overflow: hidden;
+  font-size: 1.1rem;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #f7d736;
+  transition: background-color 0.3s;
+  margin:0.5rem;
+}
+ 
+.btn > * {
+  position: relative;
+}
+ 
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, 0.3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+ 
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+} 
+
+ .card-color-1 {
+   background-color: #ead3a7;
+ }
+ .card-color-2 {
+   background-color: #9de0f5;
+ }
+ .card-color-3 {
+   background-color: #ef89ba;
+ }
+ .card-color-4 {
+   background-color: #fae890;
+ }
+ .card-color-5 {
+   background-color: #abe9c1;
+ }
+ 
+ .card-rotation-1  {
+   transform: rotate(2deg);
+ }
+
+ .card-rotation-2  {
+   transform: rotate(4deg);
+ }
+
+ .card-rotation-3  {
+   transform: rotate(6deg);
+ }
+ .card-rotation-4  {
+   transform: rotate(-2deg);
+ }
+ .card-rotation-5  {
+   transform: rotate(-4deg);
+ }
+
+ .card-rotation-6{
+  transform: rotate(-3deg);
+}
+.card-rotation-7{
+  transform: rotate(4deg);
+}
+.card-rotation-8{
+  transform: rotate(-4deg);
+}
+.card-rotation-9{
+  transform: rotate(5deg);
+}
+.card-rotation-10{
+  transform: rotate(-5deg);
+}
+
+.editbutton {
+  position: relative;
+  overflow:hidden;
+  display:inline-block;
+  width:4rem;
+  height:2rem;
+  border:1px solid #000000;
+  text-align:center;
+  box-sizing:border-box;
+  color:#000000;
+  text-decoration:none;
+  cursor: pointer;
+  line-height:30px;
+  font-family: "Permanent Marker", cursive;
+  border-radius: 4px;
+}
+
+.editbutton > span {
+  display:block;
+}
+.editbutton > .editbutton-hover:after, .editbutton > .editbutton-hover:before {
+  position:absolute;
+  top:0;
+  opacity:0;
+  display:block;
+  content:"";
+  width:0;
+  height:30px;
+}
+.editbutton > .editbutton-hover:after {
+  background-color:#000000;
+  transform-origin:center center;
+  transition:all 0.31s;
+  left:50%;
+}
+.editbutton .editbutton-hover:before {
+  background-color:#000000;
+  transition:opacity 0.31s;
+}
+
+.editbutton .editbutton-text {
+  z-index:1;
+  position:relative;
+  color:#000000;
+  transition:color 0.62s;
+}
+.editbutton:hover .editbutton-text {
+  color:#ff7b00;
+}
+.editbutton .editbutton-hover:hover:after {
+  opacity:1;
+}
+.editbutton > .editbutton-hover:hover:before {
+  opacity: 0.13;
+  left: 0;
+  width:100%;
+}
+
+.linkcontainer {
+	display: flex;
+	justify-content: center;
+	font-size: 10px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: .05em
+}
+
+
+a.taglink{
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+a.taglink::after{
+  content: "";
+  background: white;
+	mix-blend-mode: exclusion;
+  width: calc(100% + 15px);
+  height: 0;
+  position: absolute;
+  bottom: -5px;
+  left: -10px;
+	transition: all .3s cubic-bezier(0.5, 0.05, 0.5, 0.9);
+}
+
+a.taglink:hover::after{
+	height: calc(100% + 10px)
+}
